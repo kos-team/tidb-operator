@@ -547,6 +547,7 @@ type PDSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *PDConfigWraper `json:"config,omitempty"`
 
 	// TLSClientSecretName is the name of secret which stores tidb server client certificate
@@ -628,6 +629,7 @@ type PDMSSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *PDConfigWraper `json:"config,omitempty"`
 
 	// TLSClientSecretName is the name of secret which stores tidb server client certificate
@@ -730,6 +732,7 @@ type TiKVSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *TiKVConfigWraper `json:"config,omitempty"`
 
 	// RecoverFailover indicates that Operator can recover the failed Pods
@@ -817,6 +820,7 @@ type TiFlashSpec struct {
 
 	// Config is the Configuration of TiFlash
 	// +optional
+	// +kubebuilder:default={config: {}, proxy: {}}
 	Config *TiFlashConfigWraper `json:"config,omitempty"`
 
 	// Initializer is the configurations of the init container for TiFlash
@@ -868,6 +872,7 @@ type TiCDCSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *CDCConfigWraper `json:"config,omitempty"`
 
 	// StorageVolumes configure additional storage for TiCDC pods.
@@ -941,6 +946,7 @@ type TiProxySpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *TiProxyConfigWraper `json:"config,omitempty"`
 
 	// StorageVolumes configure additional storage for TiProxy pods.
@@ -1046,6 +1052,7 @@ type TiDBSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *TiDBConfigWraper `json:"config,omitempty"`
 
 	// Lifecycle describes actions that the management system should take in response to container lifecycle
@@ -3071,6 +3078,7 @@ type MasterSpec struct {
 	// +optional
 	// +kubebuilder:validation:Schemaless
 	// +kubebuilder:validation:XPreserveUnknownFields
+	// +kubebuilder:default={}
 	Config *MasterConfigWraper `json:"config,omitempty"`
 
 	// Start up script version
